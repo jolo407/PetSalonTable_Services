@@ -29,13 +29,12 @@ function display(aPet){
 
         // *delete* if(pets[i]==="Dog"){
             icon=dogIcon;
-        }
+        
         //create the HTML text
 
-        text+=`
-        <div class="pet">
+        text=`
+        <div id="${aPet.id}" class="pet">
             ${icon}
-            <h2> Appointment: ${aPet}.appointment}</h2>
             <p> Name: ${aPet.name}</p>
             <p> Age: ${aPet.age} </p>
             <p> Genger: ${aPet.gender} </p>
@@ -46,10 +45,31 @@ function display(aPet){
             <p> Payment: ${aPet.paymentMethod}</p>
             <p> ownerName: ${aPet.ownersName} </p>
             <p> contactPhone: ${aPet.contactPhone} </p>
+            <button class="btn btn-danger" onclick='deletePet(${aPet.id})'> Delete</button>
             </div>
         `;
         $('#pets').append(text);
-    
+
+    }
+    function displayTable(aPet){
+        var tr=`
+        <tr id="${aPet.id}" </tr>
+            <td> ${aPet.id} </td>
+            <td>  ${aPet.name}</td>
+            <td>  ${aPet.age} </td>
+            <td>  ${aPet.gender} </td>
+            <td>  ${aPet.type} </td>
+            <td>  ${aPet.breed} </td>
+            <td>  ${aPet.service} </td>
+            <td>  ${aPet.price}</td>
+            <td> ${aPet.paymentMethod}</td>
+            <td>  ${aPet.ownersName} </td>
+            <td>  ${aPet.contactPhone} </td>
+            <td> <button class="btn btn-danger" onclick='deletePet(${aPet.id})'> Delete</button> </td>
+            `;
+        $('#petTable').append(tr);
+
+    }
 
     
     
@@ -58,6 +78,6 @@ function display(aPet){
         
 //use the display function 
 
-display();
+
 
 // Extra HW

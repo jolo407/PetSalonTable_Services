@@ -1,5 +1,5 @@
 var salon={
-    /*name:"The Fashion Pet",
+    name:"The Fashion Pet",
     address:{
         street:"N. Petrose Ave Tampa, FL",
         number:"555-654-6987"
@@ -7,40 +7,8 @@ var salon={
     hours:{
         open:"8:00 a.m.",
         close:"8:00 p.m."
-    }, */
-    pets:[
-    {
-        name:"Scooby",
-        age: "50",
-        gender:"Male",
-        type:"Dog",
-        breed:"Dane",
-        service:"Full Service",
-        ownersName:"Shaggy",
-        contactPhone:"555-555-5555"
-    },
-    {
-        name:"Scrappy",
-        age: "40",
-        gender:"Male",
-        type:"Dog",
-        breed:"Dane",
-        service:"Nails Cuty",
-        ownersName:"Shaggy",
-        contactPhone:"555-555-5555"
-    },
-    {
-        name:"Tweety",
-        age: "60",
-        gender:"Male",
-        type:"Bird",
-        breed:"Mixed",
-        service:"Full Service",
-        ownersName:"Silvester",
-        contactPhone:"910-543-9888"
-    },
-    
-]
+    }, 
+    pets:[]
 }
 
 //document.write("Pets registered: " + salon.pets.length + "<br>" + "<br>");
@@ -50,11 +18,10 @@ var salon={
 
 
 
-
-constructor 
+var id=0;
+/*constructor */
 class Pet{
     constructor(name,age,gender,type,breed,service,price,ownersName,contactPhone){
-        this.appointment=appointment;
         this.name=name;
         this.age=age;
         this.gender=gender;
@@ -65,18 +32,18 @@ class Pet{
         this.payment=paymentMethod;
         this.ownersName=ownersName;
         this.contactPhone=contactPhone;
+        this.id=id++;
 }
 }
 
 var scooby=new Pet("Scooby",50,"Male","Dog","Dane","Full Service",19.99,"Shaggy","555-555-555")
-var champ=new Pet("Champ","1","Male","Dog","Pit","Nails",10.5,"Joel","897-898-0765");
+var champ=new Pet("Champ",1,"Male","Dog","Pit","Nails",10.5,"Joel","897-898-0765");
 var tweety=new Pet("Tweety",2,"Female","Bird","Canarian","Full Service",19.99,"Silvester","555-555-555")
 
 
 
 
 
-const txtAppointment=document.getElementById('appointment');
 const txtName=document.getElementById('petName');
 const txtAge=document.getElementById('petAge');
 const txtGender=document.getElementById('petGender');
@@ -90,17 +57,16 @@ const txtPhone=document.getElementById('petcontactPhone');
 
 
 function register(){
-    var thePet = new Pet(txtAppointment.value,txtName.value,txtAge.value,txtGender.value,txtType.value,txtBreed.balue,txtService.value,txtPayment.value,txtPrice.value,txtOwner.value,txtPhone.value);
+    var thePet = new Pet(txtName.value,txtAge.value,txtGender.value,txtType.value,txtBreed.balue,txtService.value,txtPayment.value,txtPrice.value,txtOwner.value,txtPhone.value);
    salon.pets.push(thePet);
    console.log(thePet);
-   display();
+   displayTable(thePet);
    clear();
    registeredPets();
    profitCalculation();
 }
 
 function clear(){
-    txtAppointment.value="";
     txtName.value="";
     txtAge.value="";
     txtGender.value="";
@@ -128,6 +94,54 @@ function profitCalculation(){
     document.getElementById('profits').innerHTML=`Profits: $ ${total}`;
 }
 
+function deletePet(petId){
+    //delete from array
+    //travel the array  to search the pet
+    for(var i=0;i<salon.pets.length;i++){
+        if(salon.pets[i].id===petId){
+            indexDelete=i; //storing the position
+        }
+    }
+    //splice()
+    salon.pets.splice(indexDelete,1);
+   
+    //delete the pet from html
+    //remove
+    $('#'+petId).remove();
+}
+
+function search(){
+    var text= $('#petSearch').val();
+    var searchIndex;
+    for(var i=0;i<salon.pets.length;i++){
+       if(text.toLowerCase()===salon.pets[i].name.toLowerCase() || text.toLowerCase()===salon.pets[i].service.toLowerCase())
+       {
+           searchIndex=i;
+       }
+       else{
+           console.log("No");
+        }
+    }
+       console.log(searchIndex);
+
+       $('#' + searchIndex).addClass('highlight');
+        
+}
+
+
+
+
+
+
+    //add an input:text under the index.html (add id="petSearch")
+// get the value from the input $('#petSearch').val() store it in a variable
+    //Search by name
+    //travel the array (f)
+    //compare the variable with salon.pets[].name
+    //store the position
+
+    //highlight the found pet on the table
+
 
 
 function init(){
@@ -138,14 +152,14 @@ ${salon.name}, ${salon.address.street} ${salon.address.number} <br>
 It is open from ${salon.hours.open} to ${salon.hours.close}
 `;
 
-document.getElementById(`footer-info`).innerHTML=text;
+document.getElementById(`footer`).innerHTML=text;
    
     salon.pets.push(scooby);
-    display(scooby);
+    displayTable(scooby);
     salon.pets.push(champ);
-    display(champ);
+    displayTable(champ);
     salon.pets.push(tweety);
-    display(tweety);
+    displayTable(tweety);
     registeredPets();
     profitCalculation();
 }

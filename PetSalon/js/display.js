@@ -37,7 +37,7 @@ pets.appendChild(ul); */
 
 
 
-const petAge = [50,40,60,1,2]
+/*const petAge = [50,40,60,1,2]
 
 const forLoopMinMax = () => {
   let min = petAge[0], max = petAge[0]
@@ -52,10 +52,10 @@ const forLoopMinMax = () => {
 }
 
 const [forLoopMin, forLoopMax] = forLoopMinMax()
-console.log(`Minimum: ${forLoopMin}, Maximum: ${forLoopMax}`) 
+console.log(`Minimum: ${forLoopMin}, Maximum: ${forLoopMax}`) */
 
 
-var th=`
+/*var th=`
 <tr>
   <th> # </th>
   <th> Name </th>
@@ -71,45 +71,45 @@ var th=`
 </tr>
 <tr>
   <th> 1 </th>
+  <td> </td>
+  <td> 50 </td>
+  <td> Male </td>
+  <td> Dog </td>
+  <td> Dane </td>
+  <td> Full Service </td>
+  <td> 19.99 </td>
+  <td> Cash </td>
+  <td> Shaggy </td>
+  <td> 555-555-8675 </td>
+  </tr>
+  <tr>
+  <th> 2 </th>
   <td> Champ </td>
   <td> 1 </td>
   <td> Male </td>
   <td> Dog </td>
   <td> Pitbull </td>
-  <td> Full Service </td>
-  <td> 19.99 </td>
-  <td> Cash </td>
-  <td> Joel </td>
-  <td> 555-555-8675 </td>
-  </tr>
-  <tr>
-  <th> 2 </th>
-  <td> Holy </td>
-  <td> 7 </td>
-  <td> Female </td>
-  <td> Dog </td>
-  <td> Labrador </td>
-  <td> Shower </td>
-  <td> 11.99 </td>
+  <td> Nails </td>
+  <td> 10.50 </td>
   <td> Debit Card </td>
-  <td> Maria </td>
+  <td> Joel </td>
   <td> 555-324-5454 </td>
   </tr>
   <tr>
   <th> 3 </th>
-  <td> Lucky </td>
-  <td> 3 </td>
+  <td> Tweety </td>
+  <td> 2</td>
   <td> Female </td>
-  <td> Cat </td>
-  <td> American Shorthair </td>
-  <td> Declawing </td>
-  <td> 9.99 </td>
+  <td> Bird </td>
+  <td> Canarian </td>
+  <td> Full Service </td>
+  <td> 19.99 </td>
   <td> Credit Card</td>
-  <td> John </td>
+  <td> Silvester </td>
   <td> 555-555-3486 </td>
   </tr>
 `;
-$('#petTable').append(th);
+$('#petTable').append(th); */
 
 
 

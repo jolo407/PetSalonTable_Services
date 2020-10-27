@@ -43,11 +43,6 @@
             contactPhone:"23-568-978"-->
 
             <p class="form-group">
-                <label for="appointment">Appointment</label>
-                <input type="date" id="appointment" name="appointment">
-            </p>
-
-            <p class="form-group">
             <label for="name">Name:</label>
             <input type="name" class="form-control" name="name" id="petName">
             </p>
@@ -139,11 +134,28 @@
    
     <div id="pets">
     </div>
+    
+    <div>
+        <input id="petSearch" type="text" placeholder="Search">
+        <button class="btn btn-success" onclick="search();">Search</button>
+        </div>
   
     
-    <table id="petTable" class="table table-hover">
+    <table class="table table-hover">
         <thead>
-          
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Type</th>
+          <th>Breed</th>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Payment</th>
+          <th>ownerName</th>
+          <th>contactPhone</th>
+          </thead>
+          <tbody id="petTable"> </tbody>
       </table>
     </div>
 

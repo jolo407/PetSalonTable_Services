@@ -37,6 +37,13 @@ header{
     padding: 2%;
 }
 
+#petSearch{
+    margin-left: 1rem;
+    margin-top: 2rem;
+    width: 110px;
+}
+
+
 .main-txt{
     color: white;
 }
@@ -44,13 +51,15 @@ header{
 .main-txt h2{
     font-size: 35px;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 10%;
     padding-bottom: 5%;
 }
 
 .main-txt p{
     display: block;
     padding-bottom: 15%;
+    padding-left: 2rem;
+    padding-right: 2rem;
     font-size: 18px;
     text-align: center;
 }
@@ -71,15 +80,15 @@ header{
 
 
 .image1{
-    height: 250px;
-    width: 400px;
+    height: 20rem;
+    width: 405px;
     padding-left: 30px;
 
 }
 
 .image2{
-    height: 300px;
-    width: 400px;
+    height: 28rem;
+    width: 405px;
     padding-top: 5rem;
     padding-left: 2rem;
 }
@@ -94,6 +103,10 @@ header{
 .text-right{
     padding: .16rem 1rem 1rem;
     color:darkmagenta;
+}
+
+.highlight{
+    background-color: yellow;
 }
 
 .service-heading{
@@ -114,6 +127,9 @@ ol{
 
 
 @media(min-width:768px){
+    .main-txt h2{
+        padding-top: 2rem;
+    }
     .row{
         display: flex;
         flex-direction: row;
@@ -127,7 +143,7 @@ ol{
     .image2{
         height: 29rem;
         float: right;
-        margin-left: 20rem;
+        margin-left:39rem;
         padding-bottom: 5rem;
         
     }
@@ -136,6 +152,9 @@ ol{
         padding: 0% 5% 5% 5%;
         font-size: 20px;
 
+    }
+    #petSearch{
+        width: 10rem;
     }
 } 
 
